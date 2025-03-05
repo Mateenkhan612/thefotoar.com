@@ -1,0 +1,111 @@
+    /* Fade In Up Animation */
+    .animate-fadeInUp {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animation Delay Classes */
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 600ms;
+    }
+
+    .animation-delay-800 {
+        animation-delay: 800ms;
+    }
+
+    /* Floating Animation for Image */
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    /* DARK MOOD */
+    /* Toggle Button Styling */
+    .theme-toggle {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background-color: #e5e7eb; /* Light gray for light mode */
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dark .theme-toggle {
+        background-color: #4b5563; /* Dark gray for dark mode */
+    }
+
+    .theme-toggle .toggle-circle {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dark .theme-toggle .toggle-circle {
+        transform: translateX(30px);
+    }
+
+    .theme-toggle .sun-icon,
+    .theme-toggle .moon-icon {
+        transition: opacity 0.3s ease;
+    }
+
+    .dark .theme-toggle .sun-icon {
+        opacity: 0;
+    }
+
+    .theme-toggle .moon-icon {
+        opacity: 0;
+    }
+
+    .dark .theme-toggle .moon-icon {
+        opacity: 1;
+    }
+
+    /* Merge Page CSS */
+    .drag-over {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+    }
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
