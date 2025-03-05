@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" href="./assets/images/android-chrome-512x512.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .drag-over {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./assets/images/logo.png" class="h-10" alt="">
+                    <span class="text-2xl font-bold text-blue-600 mx-2">TheFotoAR</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                    <a href="./upload.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu"
+            class="absolute top-16 left-0 w-full bg-white shadow-md opacity-0 scale-95 transform transition-all duration-300 ease-in-out hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Features</a>
+                <a href="#pricing" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Pricing</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Contact</a>
+                <a href="./upload.html"
+                    class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section with Text -->
+    <section class="bg-gradient-to-r from-blue-50 to-blue-100 pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Bring Your Memories<br>to Life with TheFotoAR
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6">
+                Upload Your Photos and Videos to Create Stunning AR Experiences
+            </h2>
+            <p class="text-base md:text-lg text-gray-500 max-w-3xl mx-auto">
+                With TheFotoAR, you can transform your static images and videos into immersive augmented reality
+                moments. Simply upload your files, and let us do the magic. Scan the generated QR code to view your
+                creations in AR!
+            </p>
+        </div>
+    </section>
+
+    <!-- Uploading Section -->
+    <section class="min-h-screen flex items-center justify-center p-6">
+        <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl w-full">
+            <!-- File Upload Section -->
+            <div id="upload-container" class="space-y-6">
+                <!-- Initial Row (No Cancel Button) -->
+                <div class="flex items-center justify-between space-x-4">
+                    <!-- Picture Upload -->
+                    <div class="relative flex-1">
+                        <input type="file" id="picture-upload-0" accept="image/*"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            onchange="handleFileSelect(event, 'picture', 0)">
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-300"
+                            ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)"
+                            ondrop="handleDrop(event, 'picture', 0)">
+                            <p class="text-lg font-semibold text-gray-700">Upload Picture Here</p>
+                            <p class="text-sm text-gray-500">or drag and drop your image</p>
+                        </div>
+                    </div>
+
+                    <!-- Plus Sign -->
+                    <span class="text-3xl font-bold text-blue-500">+</span>
+
+                    <!-- Video Upload -->
+                    <div class="relative flex-1">
+                        <input type="file" id="video-upload-0" accept="video/*"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            onchange="handleFileSelect(event, 'video', 0)">
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-300"
+                            ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)"
+                            ondrop="handleDrop(event, 'video', 0)">
+                            <p class="text-lg font-semibold text-gray-700">Upload Video Here</p>
+                            <p class="text-sm text-gray-500">or drag and drop your video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Container -->
+                <div id="preview-container-0" class="hidden mt-4 flex items-center justify-center space-x-4">
+                    <div id="picture-preview-0" class="w-1/3">
+                        <img id="picture-preview-img-0" class="w-full h-32 object-cover rounded-lg" src=""
+                            alt="Picture Preview">
+                    </div>
+                    <span class="text-3xl font-bold text-blue-500">+</span>
+                    <div id="video-preview-0" class="w-1/3">
+                        <video id="video-preview-vid-0" class="w-full h-32 rounded-lg" controls></video>
+                    </div>
+                </div>
+
+                <!-- Container for Additional Rows -->
+                <div id="additional-rows" class="space-y-4"></div>
+
+                <!-- Buttons Section -->
+                <div class="flex justify-end space-x-4">
+                    <button id="add-more-btn"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300"
+                        onclick="addMoreFields()">
+                        Add More
+                    </button>
+                    <button
+                        class="border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-100 px-4 py-2 rounded-lg hover:bg-blue-200 transition-all duration-300">
+                        Save
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="mt-8 text-center">
+                <img src="./assets/images/qr.svg" alt="QR Code" class="mx-auto mb-4">
+                <p class="text-lg font-semibold text-gray-700">Scan QR Code to View AR Pictures</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <!-- Newsletter Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold text-white">Subscribe to Our Newsletter</h3>
+            <p class="mt-2 text-gray-400">Get the latest updates and exclusive offers.</p>
+            <div class="mt-4 flex justify-center">
+                <input type="email" placeholder="Enter your email"
+                    class="p-3 w-1/3 border border-gray-600 rounded-l-md focus:ring-orange-500 focus:border-orange-500">
+                <button
+                    class="bg-blue-600 text-white px-6 py-3 rounded-r-md hover:bg-blue-700 transition duration-300">Subscribe</button>
+            </div>
+        </div>
+
+        <!-- Footer Content Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Logo and Description -->
+            <div>
+                <img src="/assets/images/Fotoarremove bg.png" alt="Company Logo" class="w-32">
+                <p class="mt-3 text-gray-400">We bring your memories to life with cutting-edge AR technology.</p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Quick Links</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Support</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Contact Us</h4>
+                <p class="mt-4 text-gray-400">📍 National Incubation Center, Old Campus, Hyderabad, Pakistan</p>
+                <p class="mt-2 text-gray-400">📞 +92 300 1234567</p>
+                <p class="mt-2 text-gray-400">📧 info@thefotoar.com</p>
+            </div>
+        </div>
+
+        <!-- Social Media and Copyright -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center border-t border-gray-700 pt-6">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="mt-4 text-gray-500">&copy; 2025 TheFotoAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle drag-and-drop events
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.target.closest('.border-dashed').classList.add('drag-over');
+        }
+
+        function handleDragLeave(event) {
+            event.target.closest('.border-dashed').classList.remove('drag-over');
+        }
+
+        function handleDrop(event, type, index) {
+            event.preventDefault();
+            event.target.closest('.border-dashed').classList.remove('drag-over');
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                console.log(`Dropped ${type} for row ${index}:`, files[0].name);
+                displayPreview(files[0], type, index);
+            }
+        }
+
+        // Handle file selection
+        function handleFileSelect(event, type, index) {
+            const file = event.target.files[0];
+            if (file) {
+                console.log(`Selected ${type} for row ${index}:`, file.name);
+                displayPreview(file, type, index);
+            }
+        }
+
+        // Display preview of uploaded files
+        function displayPreview(file, type, index) {
+            const previewContainer = document.getElementById(`preview-container-${index}`);
+            previewContainer.classList.remove('hidden');
+
+            if (type === 'picture') {
+                const imgPreview = document.getElementById(`picture-preview-img-${index}`);
+                imgPreview.src = URL.createObjectURL(file);
+            } else if (type === 'video') {
+                const vidPreview = document.getElementById(`video-preview-vid-${index}`);
+                vidPreview.src = URL.createObjectURL(file);
+            }
+        }
+        // Add more rows dynamically
+        let rowCount = 0;
+        function addMoreFields() {
+            rowCount++;
+            const container = document.getElementById('additional-rows');
+            const newRow = document.createElement('div');
+            newRow.className = 'space-y-4';
+            newRow.id = `row-${rowCount}`;
+            newRow.innerHTML = `
+        <!-- Upload Row -->
+        <div class="flex items-center justify-between space-x-4">
+            <!-- Picture Upload -->
+            <div class="relative flex-1">
+                <input 
+                    type="file" 
+                    id="picture-upload-${rowCount}" 
+                    accept="image/*" 
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" 
+                    onchange="handleFileSelect(event, 'picture', ${rowCount})"
+                >
+                <div 
+                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-300"
+                    ondragover="handleDragOver(event)" 
+                    ondragleave="handleDragLeave(event)" 
+                    ondrop="handleDrop(event, 'picture', ${rowCount})"
+                >
+                    <p class="text-lg font-semibold text-gray-700">Upload Picture Here</p>
+                    <p class="text-sm text-gray-500">or drag and drop your image</p>
+                </div>
+            </div>
+
+            <!-- Plus Sign -->
+            <span class="text-3xl font-bold text-blue-500">+</span>
+
+            <!-- Video Upload -->
+            <div class="relative flex-1">
+                <input 
+                    type="file" 
+                    id="video-upload-${rowCount}" 
+                    accept="video/*" 
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" 
+                    onchange="handleFileSelect(event, 'video', ${rowCount})"
+                >
+                <div 
+                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-500 transition-all duration-300"
+                    ondragover="handleDragOver(event)" 
+                    ondragleave="handleDragLeave(event)" 
+                    ondrop="handleDrop(event, 'video', ${rowCount})"
+                >
+                    <p class="text-lg font-semibold text-gray-700">Upload Video Here</p>
+                    <p class="text-sm text-gray-500">or drag and drop your video</p>
+                </div>
+            </div>
+
+            <!-- Cancel Button -->
+            <button 
+                class="text-red-500 hover:text-red-700 transition-all duration-300"
+                onclick="removeRow(${rowCount})"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Preview Container -->
+        <div id="preview-container-${rowCount}" class="hidden mt-4 flex items-center justify-center space-x-4">
+            <div id="picture-preview-${rowCount}" class="w-1/3">
+                <img id="picture-preview-img-${rowCount}" class="w-full h-32 object-cover rounded-lg" src="" alt="Picture Preview">
+            </div>
+            <span class="text-3xl font-bold text-blue-500">+</span>
+            <div id="video-preview-${rowCount}" class="w-1/3">
+                <video id="video-preview-vid-${rowCount}" class="w-full h-32 rounded-lg" controls></video>
+            </div>
+        </div>
+    `;
+            container.appendChild(newRow);
+        }
+        // Remove a specific row
+        function removeRow(rowId) {
+            const row = document.getElementById(`row-${rowId}`);
+            if (row) {
+                row.remove();
+            }
+        }
+    </script>
+</body>
+
+</html>

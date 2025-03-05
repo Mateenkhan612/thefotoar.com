@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFotoAR</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" href="./assets/images/android-chrome-512x512.png">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body class="min-h-screen bg-white" >
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./assets/images/logo.png" class="h-10" alt="">
+                    <span class="text-2xl font-bold text-blue-600 mx-2">TheFotoAR</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                    <a href="./upload.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="absolute top-16 left-0 w-full bg-white shadow-md opacity-0 scale-95 transform transition-all duration-300 ease-in-out hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Features</a>
+                <a href="#pricing" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Pricing</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Contact</a>
+                <a href="./upload.html" class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">Transform your workflow</span>
+                            <span class="block text-blue-600">with TheFotoAR</span>
+                        </h1>
+                        <p
+                            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Streamline your business operations with our cutting-edge SaaS platform.
+                            Boost productivity and drive growth with intelligent automation.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="./upload.html"
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                                    Start Free Trial
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <button
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Partners -->
+    <div id="partners" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center py-4">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Committed To Delivering <span class="text-blue-600"> Excellence </span>
+                </h2>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="mt-10 flex justify-center">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper py-4">
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/Tesla_Motors.svg.png" class="h-16 mx-auto" alt="Partner 1">
+                        </div>
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/McDonalds_Logo.png" class="h-16 mx-auto" alt="Partner 2">
+                        </div>
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/google.png" class="h-16 mx-auto" alt="Partner 3">
+                        </div>
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/Tesla_Motors.svg.png" class="h-16 mx-auto" alt="Partner 4">
+                        </div>
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/google.png" class="h-16 mx-auto" alt="Partner 5">
+                        </div>
+                        <div class="swiper-slide flex justify-center items-center">
+                            <img src="./assets/images/images.jpg" class="h-16 mx-auto" alt="Partner 6">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Powerful Features
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Everything you need to manage your business effectively
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div
+                                    class="inline-flex items-center justify-center p-3 bg-blue-600 rounded-md shadow-lg">
+                                    <i data-feather="check" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    Automated Workflow
+                                </h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Streamline your processes with intelligent automation
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div
+                                    class="inline-flex items-center justify-center p-3 bg-blue-600 rounded-md shadow-lg">
+                                    <i data-feather="bar-chart" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    Real-time Analytics
+                                </h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Get instant insights with powerful analytics tools
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div
+                                    class="inline-flex items-center justify-center p-3 bg-blue-600 rounded-md shadow-lg">
+                                    <i data-feather="users" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    Team Collaboration
+                                </h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Work together seamlessly with built-in collaboration features
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Guide Section -->
+    <div id="guid" class="py-12 bg-white">
+        <div class="Container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center">
+                Bring Your Photos to Life with <span class="text-blue-600 font-bold"> TheFotoAR!</span>
+            </h2>
+
+            <p class="text-gray-500 text-center italic text-sm md:text-base mt-2">
+                Just 2 steps. No need to download the application
+            </p>
+
+            <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
+                <!-- Step 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 relative">
+                    <div
+                        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
+                        <span class="text-blue-600 font-bold text-3xl">1</span>
+                    </div>
+                    <p class="text-gray-700 mt-6">Scan the QR-code or follow the
+                        <a href="#" class="text-blue-600 underline">link</a>
+                    </p>
+                    <img src="./assets/images/qr.svg" alt="QR Code" class="mt-4 mx-auto w-28 h-28">
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 relative">
+                    <div
+                        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
+                        <span class="text-blue-600 font-bold text-3xl">2</span>
+                    </div>
+                    <p class="text-gray-700 mt-6">Point your phone at the photo and it will come to life</p>
+                </div>
+
+                <!-- Photo -->
+                <div class="w-full md:w-1/3">
+                    <img src="./assets/images/pearl-1400-1024x1024.jpg" alt="Animated Photo"
+                        class="rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Trial Section -->
+    <div id="trial" class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+            <!-- Text Section -->
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl font-bold">Get 10 Photos Free</h2>
+                <p class="text-gray-400">Start your free trial now</p>
+            </div>
+
+            <!-- Button -->
+            <div class="mt-6 md:mt-0">
+                <a href="#"
+                    class="relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                    Start for FREE
+                </a>
+                <p class="text-sm text-gray-400 mt-2 text-center md:text-left">1 Month FREE. No credit card required</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Choose the perfect plan for your business
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Starter Plan -->
+                    <div class="border rounded-lg shadow-sm p-6 bg-white">
+                        <h3 class="text-lg font-medium text-gray-900">Starter</h3>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$29</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">Basic Features</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">Up to 5 Users</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">5GB Storage</span>
+                            </li>
+                        </ul>
+                        <button class="mt-8 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- Professional Plan -->
+                    <div class="border rounded-lg shadow-sm p-6 bg-white">
+                        <h3 class="text-lg font-medium text-gray-900">Professional</h3>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$99</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">Advanced Features</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">Up to 20 Users</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">50GB Storage</span>
+                            </li>
+                        </ul>
+                        <button class="mt-8 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="border rounded-lg shadow-sm p-6 bg-white">
+                        <h3 class="text-lg font-medium text-gray-900">Enterprise</h3>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$299</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">All Features</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">Unlimited Users</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="check" class="flex-shrink-0 h-5 w-5 text-green-500"></i>
+                                <span class="ml-3 text-gray-500">500GB Storage</span>
+                            </li>
+                        </ul>
+                        <button class="mt-8 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Results Section -->
+    <div id="results" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our <span class="text-blue-600"> Results </span>
+                </h2>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center border border-gray-200">
+                    <h3 class="text-3xl font-bold text-gray-900">10,000+</h3>
+                    <p class="text-gray-600 mt-2">Registered Users</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center border border-gray-200">
+                    <h3 class="text-3xl font-bold text-gray-900">9,000,000+</h3>
+                    <p class="text-gray-600 mt-2">Views of AR-Photo</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center border border-gray-200">
+                    <h3 class="text-3xl font-bold text-gray-900">15+</h3>
+                    <p class="text-gray-600 mt-2">Countries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section-->
+    <div id="testimonials" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    What People Are Saying
+                </h2>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-600 italic">"This service is amazing! It has transformed how we store and view
+                        our memories."</p>
+                    <h3 class="text-gray-900 font-bold mt-4">- John Doe</h3>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-600 italic">"A must-have for anyone who loves photography. The AR feature is
+                        mind-blowing!"</p>
+                    <h3 class="text-gray-900 font-bold mt-4">- Sarah Smith</h3>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-600 italic">"Highly recommend this to anyone looking to bring their pictures to
+                        life!"</p>
+                    <h3 class="text-gray-900 font-bold mt-4">- Mark Wilson</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Get in <span class="text-blue-600"> Touch </span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Have questions? We're here to help.
+                </p>
+            </div>
+
+            <div class="mt-10 max-w-xl mx-auto">
+                <form class="grid grid-cols-1 gap-6 bg-white p-6 rounded-lg shadow-md">
+                    <div>
+                        <label class="block text-gray-700 font-medium">Name</label>
+                        <input type="text"
+                            class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium">Email</label>
+                        <input type="email"
+                            class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium">Message</label>
+                        <textarea rows="4"
+                            class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faq" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Frequently Asked <span class="text-blue-600"> Questions </span>
+                </h2>
+            </div>
+
+            <div class="mt-10 max-w-2xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                    <div class="border border-gray-300 rounded-md overflow-hidden">
+                        <button
+                            class="w-full text-left p-4 bg-white text-gray-900 font-medium flex justify-between items-center focus:outline-none"
+                            onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            What is AR Photo Technology?
+                            <span>&#9662;</span>
+                        </button>
+                        <div class="hidden p-4 bg-gray-100 text-gray-700">AR Photo Technology allows images to be
+                            enhanced with augmented reality, making them interactive.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <h4 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+                    Any other questions?
+                </h4>
+                <p class="mt-2 text-gray-600">Do you need a different query?</p>
+
+                <div class="mt-6 flex justify-center items-center space-x-4">
+                    <input type="email" placeholder="e-mail"
+                        class="p-3 border border-gray-300 rounded-md shadow-md focus:ring-orange-500 focus:border-orange-500">
+                    <button
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-blue-700 transition duration-300">
+                        <span>Submit</span>
+                        <span>📩</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <div id="blog" class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900">Latest from Our <span class="text-blue-600"> Blog</span></h2>
+            <p class="text-gray-500 mt-4">Explore insights, updates, and stories from TheFotoAR</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            <!-- Blog Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="./assets/images/blog1.jpeg" alt="Blog Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">How AR is Transforming Photography</h3>
+                    <p class="text-gray-500 mt-2">Discover how Augmented Reality is revolutionizing the way we capture
+                        and relive memories.</p>
+                    <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="./assets/images/blog2.jpg" alt="Blog Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">The Future of Digital Albums</h3>
+                    <p class="text-gray-500 mt-2">AR-powered albums bring your memories to life like never before. Learn
+                        what’s next!</p>
+                    <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="./assets/images/blog3.webp" alt="Blog Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Why Your Business Needs AR Marketing</h3>
+                    <p class="text-gray-500 mt-2">AR isn’t just for fun—it’s a game-changer in marketing. Here’s how you
+                        can leverage it.</p>
+                    <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <!-- Newsletter Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold text-white">Subscribe to Our Newsletter</h3>
+            <p class="mt-2 text-gray-400">Get the latest updates and exclusive offers.</p>
+            <div class="mt-4 flex justify-center">
+                <input type="email" placeholder="Enter your email"
+                    class="p-3 w-1/3 border border-gray-600 rounded-l-md focus:ring-orange-500 focus:border-orange-500">
+                <button
+                    class="bg-blue-600 text-white px-6 py-3 rounded-r-md hover:bg-blue-700 transition duration-300">Subscribe</button>
+            </div>
+        </div>
+
+        <!-- Footer Content Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Logo and Description -->
+            <div>
+                <img src="/assets/images/Fotoarremove bg.png" alt="Company Logo" class="w-32">
+                <p class="mt-3 text-gray-400">We bring your memories to life with cutting-edge AR technology.</p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Quick Links</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Support</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h4 class="text-lg font-semibold text-white">Contact Us</h4>
+                <p class="mt-4 text-gray-400">📍 National Incubation Center, Old Campus, Hyderabad, Pakistan</p>
+                <p class="mt-2 text-gray-400">📞 +92 300 1234567</p>
+                <p class="mt-2 text-gray-400">📧 info@thefotoar.com</p>
+            </div>
+        </div>
+
+        <!-- Social Media and Copyright -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center border-t border-gray-700 pt-6">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="mt-4 text-gray-500">&copy; 2025 TheFotoAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- ******** Scripts ******** -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <!-- Swiper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Mobile Navigation Icon script -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Swiper Initialization -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            spaceBetween: 50,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 4000,
+            breakpoints: {
+                768: { slidesPerView: 3 },
+                480: { slidesPerView: 2 },
+                320: { slidesPerView: 1 },
+            }
+        });
+        // Feather Icons
+        feather.replace();
+        // Toggle Mobile Menu
+        document.getElementById("mobile-menu-button").addEventListener("click", function () {
+        var menu = document.getElementById("mobile-menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+            setTimeout(() => {
+                menu.classList.remove("opacity-0", "scale-95");
+                menu.classList.add("opacity-100", "scale-100");
+            }, 10);
+        } else {
+            menu.classList.remove("opacity-100", "scale-100");
+            menu.classList.add("opacity-0", "scale-95");
+            setTimeout(() => {
+                menu.classList.add("hidden");
+            }, 300);
+        }
+    });
+    </script>
+
+</body>
+
+</html>
